@@ -1,0 +1,638 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0b0d10;
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* header */
+.site-header {
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sticky header */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+}
+
+#header .site-header {
+  background: rgba(12, 13, 15, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body {
+  padding-top: 72px;
+}
+
+.site-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.site-nav a {
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* footer */
+.site-footer {
+  padding: 48px 40px 28px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.footer-info p {
+  color: #888888;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-copyright {
+  grid-column: 1 / -1;
+
+  padding-top: 28px;
+  color: #666666;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* main */
+.hero {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-content {
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-label {
+  margin-bottom: 18px;
+  color: #c8a96a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1;
+}
+
+.hero-description {
+  max-width: 520px;
+  color: #a5a5a5;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    #0b0d10 0%,
+    rgba(11, 13, 16, 0.7) 12%,
+    transparent 40%
+  );
+}
+
+/* button */
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 0 24px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #c8a96a;
+  color: #0b0d10;
+}
+
+.primary-button:hover {
+  background: #ddbe7d;
+}
+
+.secondary-button {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.secondary-button:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Cart main */
+.featured-projects {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 110px 40px;
+}
+
+.section-header {
+  margin-bottom: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-header h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.section-header > a {
+  color: #a5a5a5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.section-header > a:hover {
+  color: #ffffff;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* img card */
+.project-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  background: #15181c;
+}
+
+.project-card--featured {
+  aspect-ratio: 7 / 4;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-card__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 60px 24px 22px;
+
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.project-card__content h3 {
+  margin-bottom: 6px;
+  font-size: 24px;
+}
+
+.project-card__content p {
+  color: #c4c4c4;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* selected work */
+.selected-work {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 110px;
+}
+
+.selected-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-card--selected {
+  aspect-ratio: 4 / 3;
+}
+
+.project-card--selected .project-card__content {
+  padding: 55px 18px 16px;
+}
+
+.project-card--selected .project-card__content h3 {
+  font-size: 18px;
+}
+
+.project-card--selected .project-card__content p {
+  font-size: 12px;
+}
+
+/* Sculpt-Studies */
+.sculpt-studies {
+  width: min(1050px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.sculpt-studies-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #151515;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sculpt-studies-card img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sculpt-studies-card__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 24px;
+}
+
+.sculpt-studies-card__content span {
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sculpt-studies-card:hover img {
+  transform: scale(1.025);
+}
+
+@media (max-width: 768px) {
+  .sculpt-studies {
+    width: min(100% - 32px, 1200px);
+    padding: 60px 0;
+  }
+
+  .sculpt-studies-card img {
+    height: 380px;
+  }
+
+  .sculpt-studies-card__content {
+    display: block;
+    padding: 25px;
+  }
+
+  .sculpt-studies-card__content h3 {
+    font-size: 23px;
+  }
+
+  .sculpt-studies-card__content span {
+    display: inline-block;
+    margin-top: 18px;
+  }
+}
+
+/* Back-to-Top */
+#back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  background: #171717;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+  z-index: 1000;
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: #fff;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  #back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #d6bd7b;
+  outline-offset: 4px;
+}
+
+/* Tablet: fix Sculpt Studies cropping */
+@media (max-width: 768px) {
+  .sculpt-studies-card img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body {
+    padding-top: 112px;
+  }
+
+  /* Header */
+  .site-header {
+    height: 112px;
+    padding: 14px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .site-logo {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 56px 22px 40px;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+    font-size: 44px;
+    line-height: 0.98;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    height: 430px;
+  }
+
+  .hero-image img {
+    object-position: center;
+  }
+
+  .hero-image::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 13, 16, 0.08),
+      transparent 65%,
+      rgba(11, 13, 16, 0.25)
+    );
+  }
+
+  /* Sections */
+  .featured-projects {
+    padding: 70px 20px;
+  }
+
+  .selected-work {
+    padding: 0 20px 70px;
+  }
+
+  .section-header {
+    margin-bottom: 24px;
+  }
+
+  .section-header h2 {
+    font-size: 30px;
+  }
+
+  /* Project cards */
+  .featured-grid,
+  .selected-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card--featured {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-card--selected {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card__content {
+    padding: 52px 18px 16px;
+  }
+
+  .project-card__content h3 {
+    font-size: 20px;
+  }
+
+  .project-card__content p {
+    font-size: 12px;
+  }
+
+  .project-card--selected .project-card__content {
+    padding: 48px 16px 14px;
+  }
+
+  .project-card--selected .project-card__content h3 {
+    font-size: 18px;
+  }
+
+  /* Sculpt Studies */
+  .sculpt-studies {
+    width: calc(100% - 40px);
+    padding: 64px 0;
+  }
+
+  .sculpt-studies-card img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .sculpt-studies-card__content {
+    padding: 16px;
+  }
+
+  .sculpt-studies-card__content span {
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 40px 20px 24px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .footer-copyright {
+    grid-column: auto;
+    padding-top: 22px;
+  }
+}
