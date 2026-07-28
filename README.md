@@ -48,7 +48,7 @@ No permission is granted to copy, reproduce, redistribute, modify, publish, sell
 
 Contact
 
-Portfolio: https://www.solmazhadavand.com/
+Portfolio: https://solmazhadavand.com/
 
 ArtStation: https://www.artstation.com/solmazhadavand
 
